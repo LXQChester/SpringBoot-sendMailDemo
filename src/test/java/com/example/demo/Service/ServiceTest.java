@@ -23,7 +23,7 @@ public class ServiceTest {
 
     @Test
     public void sendSimpleMail(){
-        mailService.sendSimpleMail("lixq5012@163.com","这是第一封邮件","大家好，这是我第一封SpringBoot发送的邮件！");
+        mailService.sendSimpleMail("***@163.com","这是第一封邮件","大家好，这是我第一封SpringBoot发送的邮件！");
     }
 
 
@@ -34,14 +34,14 @@ public class ServiceTest {
                 "<h3 style=\"color:#FF0000\"> hello world , 这是一封HTML邮件 </h3>"+
                 "</body>\n"+
                 "</html>";
-        mailService.sendHtmlMail("lixq5012@163.com","这是一封HTML邮件",content);
+        mailService.sendHtmlMail("***@163.com","这是一封HTML邮件",content);
     }
 
     @Test
     public void sendAttachmentsMail() {
         String filePath = "/data/181205.zip";
 
-        mailService.sendAttachmentsMail("lixq5012@163.com","这是一封带附件的邮箱","你好Sunny,这是SpringBoot发送的一封邮件，请记得下载附件",filePath);
+        mailService.sendAttachmentsMail("***@163.com","这是一封带附件的邮箱","你好Sunny,这是SpringBoot发送的一封邮件，请记得下载附件",filePath);
     }
 
     @Test
@@ -50,7 +50,7 @@ public class ServiceTest {
         context.setVariable("id","006");
 
         String emailContent = templateEngine.process("emailTemplate",context);
-        mailService.sendHtmlMail("sun_m_d@163.com","这是一个模版邮件",emailContent);
+        mailService.sendHtmlMail("***@163.com","这是一个模版邮件",emailContent);
     }
 
 }
